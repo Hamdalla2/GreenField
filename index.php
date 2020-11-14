@@ -1,1 +1,1 @@
-<?php header( 'Location: /frontend' ) ;  ?>
+<?php header( 'Location: /public' ) ;  ?>

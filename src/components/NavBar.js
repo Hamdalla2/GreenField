@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SignInForm from './SignInForm.js';
-import RegisterForm from './RegisterForm.js';
-import { Register, SignIn, showMenu } from '../actions/actions.js';
+import SignUpForm from './SignUpForm.js';
+import { SignUp, SignIn, showMenu } from '../actions/actions.js';
 
 class NavBar extends Component {
     
-    onTrigger1 = () => {
+    SignUpButton = () => {
         let x = "show";
         let y = "hide"
-        if (this.props.register === "hide") {
+        if (this.props.SignUp === "hide") {
             this.props.changex(x);
             this.props.changey(y);
         }
@@ -18,7 +18,7 @@ class NavBar extends Component {
         }
     }
 
-    onTrigger = () => {
+    SignInButton = () => {
         let x = "show"
         let y = "hide";
         if (this.props.SignIn === "hide") {
@@ -30,29 +30,27 @@ class NavBar extends Component {
         }
     }
     handleClick = () => {
-        let z = "show";
         if (this.props.showMenu === "hide") {
-            this.props.menu(z);
+            this.props.menu("show");
         }
         else {
-            z = "hide";
-            this.props.menu(z);
+            this.props.menu("hide");
         }
     }
 
     render() {
         return (
             <div className="menu" >
-                <img id="openmenu" className="arrow" alt="" src="../media/rightarrow.png" onClick={this.handleClick} style={{ display: this.props.showMenu === "show" ? "none" : "" }}></img>
+                <img id="openmenu" className="arrow" alt="" src="./media/rightarrow.png" onClick={this.handleClick} style={{ display: this.props.showMenu === "show" ? "none" : "" }}></img>
                 <nav id="img-logo" style={{ display: this.props.showMenu === "show" ? "" : "none" }} >
-                    <img id="openmenu" className="arrow" alt="" src="../media/leftarrow.png" onClick={this.handleClick}></img>
-                    <input type="image" className="navitem" alt="" src="../media/search.png" onClick=""></input>
-                    <input type="image" className="navitem" alt="" src="../media/house.png" href="http://127.0.0.1:3000/"></input>
-                    <input type="image" className="navitem" alt="" src="../media/signin.png" onClick={this.onTrigger}></input>
-                    <input type="image" className="navitem" alt="" src="../media/signup.png" onClick={this.onTrigger1}></input>
-                    <input type="image" className="navitem" alt="" src="../media/cog.png" onClick=""></input>
+                    <img id="openmenu" className="arrow" alt="" src="./media/leftarrow.png" onClick={this.handleClick}></img>
+                    <input type="image" className="navitem" alt="" src="./media/search.png"></input>
+                    <input type="image" className="navitem" alt="" src="./media/house.png" href="http://127.0.0.1:3000/"></input>
+                    <input type="image" className="navitem" alt="" src="./media/signin.png" onClick={this.SignInButton}></input>
+                    <input type="image" className="navitem" alt="" src="./media/signup.png" onClick={this.SignUpButton}></input>
+                    <input type="image" className="navitem" alt="" src="./media/cog.png"></input>
                 </nav>
-                <RegisterForm />
+                <SignUpForm />
                 <SignInForm />
             </div>
         );
@@ -61,15 +59,14 @@ class NavBar extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        test: state.test,
-        register: state.register,
+        SignUp: state.SignUp,
         SignIn: state.SignIn,
         showMenu: state.showMenu
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        changex: (x) => { dispatch(Register(x)) },
+        changex: (x) => { dispatch(SignUp(x)) },
         changey: (y) => { dispatch(SignIn(y)) },
         menu: (z) => { dispatch(showMenu(z)) }
     }

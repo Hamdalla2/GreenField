@@ -2,17 +2,17 @@ const initState = {
     test: [
         { username: "ahamd", password: "123"}
     ],
-    register: "hide",
+    SignUp: "hide",
     SignIn: "hide",
     showMenu: "hide"
 }
 
 const rootReducer = (state = initState, action) => {
     console.log("action====>", action);
-    if (action.type === "Show_REGISTER"){
+    if (action.type === "Show_SignUp"){
         return {
             ...state,
-            register: action.register
+            SignUp: action.SignUp
         }
     }
     else if (action.type === "Show_SignIn") {

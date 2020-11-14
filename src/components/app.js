@@ -13,7 +13,6 @@ class App extends Component {
                 <GameView />
                 <GameList />
                 <Footer />
-                {/* <RegisterForm /> */}
             </div>
         );
     }

@@ -1,7 +1,7 @@
-export const Register = (x) => {
+export const SignUp = (x) => {
     return {
-        type: 'Show_REGISTER',
-        register: x,
+        type: 'Show_SignUp',
+        SignUp: x,
     }
 }
 export const SignIn = (y) => {

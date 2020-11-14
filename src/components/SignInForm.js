@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Register, SignIn } from '../actions/actions.js';
+import { SignIn } from '../actions/actions.js';
 const axios = require('axios');
 const $ = require('jquery');
 class SignInForm extends Component {
@@ -16,7 +16,7 @@ class SignInForm extends Component {
         e.preventDefault();
         let input = $('#signIn-form').serializeArray();
         let options = {
-            url: `http://localhost:3000/user/login`,
+            url: `http://localhost:4000/user/login`,
             method: 'post',
             data: { username: input[0].value, password: input[1].value }
         }
@@ -67,14 +67,14 @@ class SignInForm extends Component {
                 <form id="signIn-form" onSubmit={this.handleSubmit}>
                     <h1>Sign In</h1>
                     <br/>
-                    <div class="column">
+                    <div className="column">
                     <label htmlFor="username">User Name:</label>
                     <input type="text" id="username" name="username" onChange={this.handleChange} /><br/>
                     <label htmlFor="Password">Password:</label>
                     <input type="password" id="password" name="password" onChange={this.handleChange} />
                     </div>
                     <br/>
-                    <div class="column">
+                    <div className="column">
                     <button id="submit">Sign In</button><br/>
                     <button id="Cancel" onClick={this.onTrigger}>Cancel</button>
                     </div>
@@ -86,10 +86,14 @@ class SignInForm extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        test: state.test,
-        register: state.register,
         SignIn: state.SignIn
     }
 }
 
-export default connect(mapStateToProps)(SignInForm);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changey: (y) => { dispatch(SignIn(y)) }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(SignInForm);

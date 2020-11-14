@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Register, SignIn } from '../actions/actions.js';
+import { SignUp } from '../actions/actions.js';
 const axios = require('axios');
 const $ = require('jquery');
-class RegisterForm extends Component {
+class SignUpForm extends Component {
      constructor(props) {
          super(props);
          this.state = {
@@ -15,11 +15,10 @@ class RegisterForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let input = $('#register-form').serializeArray();
-        // console.log(input);
+        let input = $('#signup-form').serializeArray();
         if (input[1].value === input[2].value) {
             let options = {
-                url: `http://localhost:3000/user/signup`,
+                url: `http://localhost:4000/user/signup`,
                 method: 'post',
                 data: { username: input[0].value, password: input[1].value }
             }
@@ -27,7 +26,6 @@ class RegisterForm extends Component {
             axios(options)
                 .then((results) => {
                     console.log(results);
-                    // this.getData();       // what is the received data will be ?
                 })
 
                 .catch((err) => {
@@ -68,13 +66,12 @@ class RegisterForm extends Component {
     }
 
     render() {
-        // console.log("here===>", this.props);
         return (
-            <div id="register" className="center" style={{ display: this.props.register === "show" ? "" : "none" }}>
-                <form id="register-form" onSubmit={this.handleSubmit}>
-                    <h1>Register</h1>
+            <div id="signup" className="center" style={{ display: this.props.SignUp === "show" ? "" : "none" }}>
+                <form id="signup-form" onSubmit={this.handleSubmit}>
+                    <h1>Sign Up</h1>
                     <br/>
-                    <div class="column">
+                    <div className="column">
                     <label htmlFor="username1">User Name:</label>
                     <input type="text" id="username1" name="username1" onChange={this.handleChange} /><br/>
                     <label htmlFor="Password1">Password:</label>
@@ -83,9 +80,9 @@ class RegisterForm extends Component {
                     <input type="password" id="confirmPassword" name="confirmPassword" onChange={this.handleChange} />
                     </div>
                     <br/>
-                    <div class="column">
-                    <button id="submit1">Register</button><br/>
-                    <button id="Cancel" onClick={this.onTrigger}>Cancel</button>
+                    <div className="column">
+                    <button id="submit1">Sign Up</button><br/>
+                    <button id="Cancel1" onClick={this.onTrigger}>Cancel</button>
                     </div>
                 </form>
             </div>
@@ -94,12 +91,15 @@ class RegisterForm extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        test: state.test,
-        register: state.register,
-        SignIn: state.signIn
+        SignUp: state.SignUp,
+    }
+}
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changex: (x) => { dispatch(SignUp(x)) },
     }
 }
 
 
-export default connect(mapStateToProps)(RegisterForm);
+export default connect(mapStateToProps,mapDispatchToProps)(SignUpForm);
