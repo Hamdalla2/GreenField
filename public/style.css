@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+    background-image: url('media/neon.jpg');
+    background-color: purple;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    color:red;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+input[type='button'], button{
+    border: 4px groove purple;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    color:red;
+    background-color: transparent;
+    height:30px;
+    width:200px;
+    outline: none;
+}
+input[type='text'], input[type='number'], input[type='password'], textarea{
+    color:red;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 12px;
+    height:30px;
+    width:200px;
+    outline: none;
+}
+input[type='text']::placeholder,input[type='number']::placeholder, input[type='password']::placeholder, textarea::placeholder{
+    color:gray;
+    font-weight: bold;
+    text-align: center;
+}
+input:hover, textarea:hover, button:hover, .navitem:hover{
+    background-color: cyan;
+}
+a{
+    display: block;
+}
+
+/* Flex Flow Styles */
+.column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+}
+.center{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.hide{
+    display:none;
+}
+
+/* Menu Styles */
+.menu{
+    position:fixed;
+    top:5px;
+    left:5px;
+}
+.navitem{
+    border: 4px groove purple;
+    border-radius: 12px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+}
+.arrow{
+    height: 58px;
+    width: 58px;
+}
+
+/* Game One Styles */
+.tower{
+    border: 5px solid red;
+    height : 400px;
+    width : 100px;
+    margin : 30px;
+    display: flex;
+    flex-flow: column-reverse;
+}
+.fire{
+    width : 100px;
+    height : 50%;
+}
+.fire:hover{
+    background-color: cyan;
+}

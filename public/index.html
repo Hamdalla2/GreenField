@@ -1,43 +1,80 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamesio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div id="app"></div>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div class="column hide" id="landing">
+    <div class="row">
+    <a  width="55%" href="http://awlibfheknmdk.herokuapp.com/public/"><img src="media/one.png"></a>
+    <a  width="55%" href="https://memory-game-1.herokuapp.com/index.html"><img src="media/two.png"></a>
+    </div>
+    <div class="row">
+    <a  width="55%" href="http://marketxoro.herokuapp.com/public/"><img src="media/three.png"></a>
+    <a  width="55%" href="https://idsjndkjendk.herokuapp.com/index.html"><img src="media/four.png"></a>
+    </div>
+    <div class="row">
+    <img src="media/one.png" href="">
+    <img src="media/two.png" href="">
+    </div>
+    <div class="row">
+    <img src="media/three.png" href="">
+    <img src="media/four.png" href="">
+    </div>
+    <div class="row">
+    <img src="media/one.png" href="">
+    <img src="media/two.png" href="">
+    </div>
+    <div class="row">
+    <img src="media/three.png" href="">
+    <img src="media/four.png" href="">
+    </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <div class="center hide" id="signup">
+    <h1>Create New Account</h1>
+    <br>
+    <div class="column">
+        Username <input type="text">
+        Password <input type="password">
+        Confirm <input type="password">
+    </div>
+    <br>
+    <input type="button" value="Sign Up" id="register1">
+    </div> 
+
+    
+    <div class="center" id="signin">
+    <h1>Gamesio</h1>
+    <br>
+    <div class="column">
+        Username <input type="text">
+        Password <input type="text">
+    </div>
+    <br>
+    <div class="column">
+    <input type="button" value="Sign In" id="login">
+    <input type="button" value="Sign Up" id="register2">
+    </div>
+    </div> -->
+
+    <!-- 
+    <div id="game1" class="row">
+        <div class='tower'>
+            <div class='fire'></div>
+        </div>
+    </div> -->
+
+    <audio id="sound"></audio>
+    <script src="effects.js"></script>
+    <script src="components"></script>
+</body>
 </html>
