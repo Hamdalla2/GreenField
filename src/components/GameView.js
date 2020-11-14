@@ -9,7 +9,7 @@ class GameView extends Component {
     render() {
         return (
             <div>
-                <img src =""></img>
+                <img alt="" src=""></img>
             </div>
         )
     }

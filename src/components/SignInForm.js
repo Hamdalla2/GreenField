@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Register, SignIn } from '../actions/actions.js';
 const axios = require('axios');
+const $ = require('jquery');
 class SignInForm extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         username: null,
-    //         password: null
-    //     }
-    // }
+     constructor(props) {
+         super(props);
+         this.state = {
+             username: null,
+             password: null
+         }
+     }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -52,7 +53,7 @@ class SignInForm extends Component {
     // }
 
     handleChange = (e) => {
-        setState({ [e.target.id]: e.target.value })
+        this.setState({ [e.target.id]: e.target.value })
     }
 
     onTrigger = () => {
@@ -90,10 +91,5 @@ const mapStateToProps = (state) => {
         SignIn: state.SignIn
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        changey: (y) => { dispatch(SignIn(y)) }
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);
+export default connect(mapStateToProps)(SignInForm);

@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SignInForm from './SignInForm.jsx';
-import RegisterForm from './RegisterForm.jsx';
+import SignInForm from './SignInForm.js';
+import RegisterForm from './RegisterForm.js';
 import { Register, SignIn, showMenu } from '../actions/actions.js';
 
 class NavBar extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+    
     onTrigger1 = () => {
         let x = "show";
         let y = "hide"
-        if (this.props.register == "hide") {
+        if (this.props.register === "hide") {
             this.props.changex(x);
             this.props.changey(y);
         }
@@ -24,7 +21,7 @@ class NavBar extends Component {
     onTrigger = () => {
         let x = "show"
         let y = "hide";
-        if (this.props.SignIn == "hide") {
+        if (this.props.SignIn === "hide") {
             this.props.changey(x);
             this.props.changex(y);
         }
@@ -34,7 +31,7 @@ class NavBar extends Component {
     }
     handleClick = () => {
         let z = "show";
-        if (this.props.showMenu == "hide") {
+        if (this.props.showMenu === "hide") {
             this.props.menu(z);
         }
         else {
@@ -46,14 +43,14 @@ class NavBar extends Component {
     render() {
         return (
             <div className="menu" >
-                <img id="openmenu" className="arrow" src="../media/rightarrow.png" onClick={this.handleClick} style={{ display: this.props.showMenu === "show" ? "none" : "" }}></img>
+                <img id="openmenu" className="arrow" alt="" src="../media/rightarrow.png" onClick={this.handleClick} style={{ display: this.props.showMenu === "show" ? "none" : "" }}></img>
                 <nav id="img-logo" style={{ display: this.props.showMenu === "show" ? "" : "none" }} >
-                    <img id="openmenu" className="arrow" src="../media/leftarrow.png" onClick={this.handleClick}></img>
-                    <input type="image" className="navitem" src="../media/search.png" onClick=""></input>
-                    <input type="image" className="navitem" src="../media/house.png" href="http://127.0.0.1:3000/"></input>
-                    <input type="image" className="navitem" src="../media/signin.png" onClick={this.onTrigger}></input>
-                    <input type="image" className="navitem" src="../media/signup.png" onClick={this.onTrigger1}></input>
-                    <input type="image" className="navitem" src="../media/cog.png" onClick=""></input>
+                    <img id="openmenu" className="arrow" alt="" src="../media/leftarrow.png" onClick={this.handleClick}></img>
+                    <input type="image" className="navitem" alt="" src="../media/search.png" onClick=""></input>
+                    <input type="image" className="navitem" alt="" src="../media/house.png" href="http://127.0.0.1:3000/"></input>
+                    <input type="image" className="navitem" alt="" src="../media/signin.png" onClick={this.onTrigger}></input>
+                    <input type="image" className="navitem" alt="" src="../media/signup.png" onClick={this.onTrigger1}></input>
+                    <input type="image" className="navitem" alt="" src="../media/cog.png" onClick=""></input>
                 </nav>
                 <RegisterForm />
                 <SignInForm />

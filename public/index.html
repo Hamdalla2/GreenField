@@ -74,7 +74,13 @@
     </div> -->
 
     <audio id="sound"></audio>
-    <script src="effects.js"></script>
-    <script src="components"></script>
+    <script>
+    $("input").on("mouseenter", function(){
+        $("#sound").attr({ 
+            'src':'media/point.mp3', 
+            'autoplay':'autoplay'
+        })
+    })
+    </script>
 </body>
 </html>

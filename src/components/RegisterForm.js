@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Register, SignIn } from '../actions/actions.js';
 const axios = require('axios');
+const $ = require('jquery');
 class RegisterForm extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         username: null,
-    //         password: null,
-    //         confirmpassword: null
-    //     }
-    // }
+     constructor(props) {
+         super(props);
+         this.state = {
+             username: null,
+             password: null,
+             confirmpassword: null
+         }
+     }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -62,7 +63,7 @@ class RegisterForm extends Component {
     // }
 
     onTrigger = () => {
-            x = "hide";
+            let x = "hide";
             this.props.changex(x);
     }
 
@@ -99,10 +100,6 @@ const mapStateToProps = (state) => {
 
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        changex: (x) => { dispatch(Register(x)) }
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);
+
+export default connect(mapStateToProps)(RegisterForm);
