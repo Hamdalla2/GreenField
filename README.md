@@ -10,7 +10,7 @@
 ## How to Get Started ##
 *  Fork
 *  Clone your fork
-*  Fill (.env) file
+*  Create (.env) file --- Contains [atlas mongodb link + sendgrid sender email + sendgrid api key]
 *  npm install
 *  npm start & npm run server
 *  Chrome : 127.0.0.1:3001
@@ -47,10 +47,6 @@
 *  jQuery
 *  Css
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ce644d1e2ccc7b002d026c6b6103446bf3113399
 ## Random Javascript Flex ##
   > These 2 lines under are equal but written using es5 & es6
 
@@ -61,7 +57,8 @@ let function = (parameter) => parameter
 ```
 
 ## Before you deploy ##
-  > Remove all (http://localhost:3000) from all the react files [AddGame + DisplayGame + NewPassword + Profile + ResetPassword + SignIn + SignOut]
+  > Remove all (http://localhost:3000) from all the react files 
+  * [AddGame + DisplayGame + NewPassword + Profile + ResetPassword + SignIn + SignOut]
 
 ## Todo ##
 *  Create more games
@@ -69,7 +66,3 @@ let function = (parameter) => parameter
 *  Design and sizes
 *  Use firebase functions
 *  Make some games playable online by 2 players like the connect-4 game
-<<<<<<< HEAD
-=======
-
->>>>>>> ce644d1e2ccc7b002d026c6b6103446bf3113399
