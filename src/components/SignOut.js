@@ -14,6 +14,7 @@ class SignOut extends Component {
         localStorage.removeItem('gamesio'); 
         this.props.setUser({});
         this.props.sign(0);
+        
     }
     render() {
         return (
